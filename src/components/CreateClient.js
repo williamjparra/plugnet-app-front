@@ -15,34 +15,32 @@ function CreateClient(props) {
         status: true
     }
 
-    const [addClient] = useMutation(ADD_ClIENT)
+    const [addClient] = useMutation(ADD_ClIENT, {
+        variables: {
+            name: "newOne",
+            createdAt: "26/2/2021",
+            updatedAt: "26/2/2021",
+            note: "esto es una nota",
+        }
+    })
     
-    const addClientFunc = (e) => {
+    /*const addClientFunc = (e) => {
         e.preventDefault();
         try{
             addClient({variables: {
-                name: "newOne",
-                contact: {
-                    phone: "1234667789",
-                    email: "algo@algo.algo",
-                    desc: "esta es una descripcion"
-                },
-                createdAt: "26/2/2021",
-                updatedAt: "26/2/2021",
-                note: "esto es una nota",
-                status: true
+                
             }})
             console.log(createClient)
         } catch (e) {
             console.log(e)
         }
-    }
+    }*/
 
     return(
         <div className="test">
-            <form onSubmit={addClientFunc}>
+            <form onSubmit={addClient}>
                 <p>
-                    prueba
+                    prueba para ver si funciona
                 </p>
                 <button type="submit">
                     presiona para subir 
@@ -53,18 +51,24 @@ function CreateClient(props) {
 }
 
 const ADD_ClIENT = gql`
-    mutation CreateNewClient($createClientInput: ClientInput!){
-        createClient(input: $createClientInput){
-            name
-            contact{
-                phone
-                email
-                desc
+    mutation CreateNewClient(
+        $name: String!
+        $createdAt: String!
+        $updatedAt: String!
+        $note: String!
+    ){
+        createClient(
+            createClientInput: {
+                name: $name
+                createdAt: $createdAt
+                updatedAt: $updatedAt
+                note: $note
             }
+        ){
+            name
             createdAt
             updatedAt
             note
-            status
         }
     }
 `
