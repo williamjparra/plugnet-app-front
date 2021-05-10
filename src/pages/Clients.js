@@ -1,5 +1,9 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client';
+import NewClient from '../components/NewClient'
+import { Link } from 'react-router-dom'
+
+import './css/Client.css'
 
 function Clients() {
 
@@ -11,6 +15,7 @@ function Clients() {
     return(
         <div className="app-wrapper">
             <h1>Clientes</h1>
+            <NewClient />
             <div className="clients-container" >
                 <table>
                     <tbody>
@@ -35,7 +40,9 @@ function Clients() {
                             data.getClients.map( client => (
                                 <tr key={client._id}>
                                     <td>
-                                        {client.name}
+                                        <Link to={`/client/${client._id}`} >
+                                            {client.name}
+                                        </Link>
                                     </td>
                                     <td>
                                         { 

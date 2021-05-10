@@ -1,0 +1,34 @@
+.addClientAppContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clientInputContainer {
+  background-color: red;
+}
+
+.open {
+  height: auto;
+  transition-duration: 1s;
+}
+
+.addClientAppContainer > .close {
+  display: none;
+}
+
+.arrow-icon img {
+  width: 40px;
+}
+
+.active {
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+
+.unactive {
+  transition-duration: 0.5s;
+}

@@ -20,9 +20,9 @@ function Navbar() {
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <Link to="/clients">
                                 Usuarios                          
-                            </a>
+                            </Link>
                         </li>
                         <li>
                              <a href="#">
