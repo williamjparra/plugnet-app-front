@@ -26,7 +26,7 @@ export default function ClientInput() {
     const updateData = (e) => {
         const update = {
             ...clientData,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         }
 
         AddClient(update)
@@ -34,6 +34,7 @@ export default function ClientInput() {
 
     const createClient = e => {
         e.preventDefault()
+        console.log(e.target)
 
         var {
             name,
@@ -48,8 +49,8 @@ export default function ClientInput() {
             variables: {
                 client: {
                     name,
-                    contact : {
-                        phone: phone === "" ? "informacion no disponiblie" : phone ,
+                    contact: {
+                        phone: phone === "" ? "informacion no disponiblie" : phone,
                         email: email === "" ? "informacion no disponiblie" : email,
                         desc: desc === "" ? "no hay nota disponible" : desc
                     },
@@ -64,7 +65,7 @@ export default function ClientInput() {
         AddClient(initialState)
     }
 
-    if(data) {
+    if (data) {
         console.log(data)
     }
 
@@ -78,40 +79,40 @@ export default function ClientInput() {
 
     return (
         <div>
-            <form>
+            <form onSubmit={createClient}>
                 <h2>Completa los siguientes campos para agregar un nuevo cliente</h2>
-                <input 
-                    type="text" 
-                    placeholder="Nombre de empresa/cliente" 
-                    name="name" 
-                    onChange={updateData} 
-                    value={clientData.name} 
+                <input
+                    type="text"
+                    placeholder="Nombre de empresa/cliente"
+                    name="name"
+                    onChange={updateData}
+                    value={clientData.name}
                 />
-                <input 
-                    type="text" 
-                    placeholder="phone" 
-                    name="phone" onChange={updateData} 
+                <input
+                    type="text"
+                    placeholder="phone"
+                    name="phone" onChange={updateData}
                     value={clientData.phone}
                     required
                 />
-                <input 
-                    type="text" 
-                    placeholder="email" 
-                    name="email" onChange={updateData} 
+                <input
+                    type="text"
+                    placeholder="email"
+                    name="email" onChange={updateData}
                     value={clientData.email}
                     required
                 />
-                <input 
-                    type="text" 
-                    placeholder="descripcion del contacto" 
-                    name="desc" onChange={updateData} 
+                <input
+                    type="text"
+                    placeholder="descripcion del contacto"
+                    name="desc" onChange={updateData}
                     value={clientData.desc}
                     required
                 />
-                <input 
-                    type="text" 
-                    placeholder="note" 
-                    name="note" onChange={updateData} 
+                <input
+                    type="text"
+                    placeholder="note"
+                    name="note" onChange={updateData}
                     value={clientData.note}
                 />
                 <button onClick={createClient}>

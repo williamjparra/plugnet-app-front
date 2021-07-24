@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './css/navbar.css'
 
 function Navbar() {
-    return(
+    return (
         <div className="navbar">
             <div className="brand">
                 <h1>
@@ -15,23 +15,23 @@ function Navbar() {
                 <div className="navbar-list">
                     <ul>
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 Dasboard
-                            </a>
-                        </li>
-                        <li>
-                            <Link to="/clients">
-                                Usuarios                          
                             </Link>
                         </li>
                         <li>
-                             <a href="#">
+                            <Link to="/clients">
+                                Usuarios
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="#">
                                 Abonos <br />
-                                Deudas                            
+                                Deudas
                             </a>
                         </li>
                         <li>
-                             <a href="#">
+                            <a href="#">
                                 Gastos <br />
                                 ganancias
                             </a>
@@ -41,6 +41,11 @@ function Navbar() {
                                 ubicacion <br />
                                 clientes
                             </a>
+                        </li>
+                        <li>
+                            <Link to="sectores">
+                                sectores y routers de borde
+                            </Link>
                         </li>
                     </ul>
                 </div>

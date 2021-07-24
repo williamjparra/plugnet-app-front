@@ -1,5 +1,5 @@
 //importamos los modulos
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React from 'react'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { createUploadLink } from "apollo-link-upload";
@@ -7,6 +7,7 @@ import { createUploadLink } from "apollo-link-upload";
 //importamos las paginas
 import Clients from './pages/Clients'
 import UploadFile from './pages/UploadFile'
+import Sectors from './pages/Sectors'
 
 import './App.css';
 //importamos los componentes
@@ -14,7 +15,7 @@ import Navbar from './components/Navbar'
 import ClientInfo from './pages/ClientInfo';
 
 const client = new ApolloClient({
-  link: createUploadLink({uri: 'http://localhost:5055/api'}),
+  link: createUploadLink({ uri: 'http://localhost:5055/api' }),
   cache: new InMemoryCache()
 })
 
@@ -24,10 +25,11 @@ function App() {
       <div className="app">
         <Router>
           <Navbar />
-          <div className="app-container">    
+          <div className="app-container">
             <Route exact path="/clients" component={Clients} />
-            <Route exact path="/client/:id" component={ClientInfo}/>
+            <Route exact path="/client/:id" component={ClientInfo} />
             <Route exact path="/upload" component={UploadFile} />
+            <Route exact path="/sectores" component={Sectors} />
           </div>
         </Router>
       </div>

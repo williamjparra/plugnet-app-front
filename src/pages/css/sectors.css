@@ -1,0 +1,73 @@
+.sectors-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.sectors {
+    flex-basis: 50%;
+}
+
+.routers {
+    flex-basis: 50%;
+}
+
+.BorderRoutersContainer, .sectorListContainer {
+    border: solid black 1px;
+    margin: 5px;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+.tableHeader, .tableBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.tableHeader {
+    padding: 2px 0px;
+    background-color: #131D29;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: white;
+}
+
+.col-1, .col-2, .col-3 {
+    flex-basis: 33%;
+}
+
+.tableHeader .col-2, .tableHeader .col-3 {
+    border-left: solid black 1px;
+}
+
+.tableBody {
+    margin: 5px 0;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.6);
+    align-items: stretch;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.tableBody .col-1, .tableBody .col-2, .tableBody .col-3  {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+

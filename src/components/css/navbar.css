@@ -17,6 +17,10 @@
     justify-content: center;
 }
 
+.brand h1 {
+    color: #f2c744
+}
+
 ul {
     list-style: none;
     margin-block-start: 0px;
